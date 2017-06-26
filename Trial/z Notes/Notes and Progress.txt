@@ -1,4 +1,31 @@
-﻿The Data Model
+﻿6/26 TO DO LIST
+
+Models\Game
+	-Add more member properties to games....player ct, play time, release date
+Views\Games\Index
+	-Action Link from game title to link to game details page (details link as is, does this too)
+Views\Games\Details
+	-Details link will show (added)  details about desired title.
+
+Game Title Sorting
+Game Tile String Filtering
+(see tutorial)
+
+Add Drop down menu to Games\Index for Game Property Options
+	-Sort by new drop down option
+
+Paging for Game Repo
+
+
+
+
+
+
+
+
+
+
+The Data Model
 	User - Name - virtual ICollection<Collection> Collections
 	Game - Title - virtual ICollection<Collection> Collections
 	Collection - object holds a user and a game, this ties the 2 together
