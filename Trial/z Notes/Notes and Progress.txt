@@ -1,0 +1,111 @@
+﻿The Data Model
+	User - Name - virtual ICollection<Collection> Collections
+	Game - Title - virtual ICollection<Collection> Collections
+	Collection - object holds a user and a game, this ties the 2 together
+---- Im sure collection is redundant but makes it easier for following tutorial ----
+
+**********Learn more about basic database structures**********
+
+DataBase Context
+	This is how Entity talks to models and Db
+		
+		Connection String
+			public SchoolContext() : base("SchoolContext")
+			{
+			}
+			Added to Web.config file.
+		
+		DBSet
+			public DbSet<User> Users { get; set; }
+
+			This code creates a DbSet property for each entity set. In Entity Framework terminology, 
+			an entity set typically corresponds to a database table, and an entity corresponds to a row in the table.
+
+Initializer File
+	BgbInitializer.cs
+		protected override void Seed(SchoolContext context)
+        {.........}
+		
+		The Seed method takes the database context object as an input parameter, and the code in the method uses
+		that object to add new entities to the database. For each entity type, the code creates a collection of new
+		entities, adds them to the appropriate DbSet property, and then saves the changes to the database.
+
+Tell Entity Framework to use your initializer class
+<entityFramework>
+  <contexts>
+    <context type="......., .....">
+      <databaseInitializer type=".....DAL.....Initializer, ...." />
+    </context>
+  </contexts>
+
+  Scaffold 
+	Users
+		Created Users View Folder......
+			created delete, edit and index views
+				created  users contrtoller with methods for above.  understand this
+**********learn db methods**********
+
+
+9/26
+
+Users Controller
+	
+db.Find()
+<dt>
+@Html.DisplayNameFor
+
+Scaffold did not mess with collections displaying in Views/User/Details view because it was a <collection> of objects.  
+Added foreach loop to display item.Game.Title in html table.
+
+try/catch
+DataException
+ModelState.AddModelError
+
+Updated Users Controller and Views
+***
+***
+******Pay attention to db() methods being used to edit your database******
+****dont rely on scaffoldings or let their ease impeade your comphrension of code******
+
+SORTING USERS
+LINQ to Entities
+Index Method takes sortOrder param
+	
+Users Controller
+Index Action Method( sortOrder and searchString ) 
+	sortOrder 
+		uses switch case.  ActionLink in html when Name is clicked, "name_desc" is passed and Index reloaded.
+			switch (sortOrder)
+			{
+				case "name_desc":
+					users = users.OrderByDescending(u => u.Name);
+					break;
+				default:
+					users = users.OrderBy(u => u.Name);
+					break;
+			}
+	searchString
+		search box added.....
+		@using (Html.BeginForm())
+		{
+			<p>
+				Find by name: @Html.TextBox("SearchString")  
+				<input type="submit" value="Search" /></p>
+		}
+		entered text will pass searchString and execute linq below.
+			users = users.Where(u => u.Name.Contains(searchString));
+
+Adding PAGING
+	Install-Package PagedList.Mvc
+The NuGet PagedList.Mvc package automatically installs the PagedList package as a dependency. 
+The PagedList package installs a PagedList collection type and extension methods for IQueryable and IEnumerable collections. 
+The extension methods create a single page of data in a PagedList collection out of your IQueryable or IEnumerable, and the PagedList collection
+provides several properties and methods that facilitate paging. The PagedList.Mvc package installs a paging helper that displays the paging buttons.
+
+using PagedList;
+
+Adding GROUPING features
+
+
+
+  	

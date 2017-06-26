@@ -1,0 +1,36 @@
+﻿@model Trial.Models.User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Your Game Library</h4>
+   
+    <dl class="dl-horizontal">
+
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Game Title</th>    
+                </tr>
+                @foreach (var item in Model.Collections)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Game.Title)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UserID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
