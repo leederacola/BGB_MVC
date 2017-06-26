@@ -105,6 +105,8 @@ provides several properties and methods that facilitate paging. The PagedList.Mv
 using PagedList;
 
 Adding GROUPING features
+Skipping this data does not work with demo.
+
 
 
 
