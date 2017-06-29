@@ -16,11 +16,16 @@ namespace Trial.Controllers
         private BgbContext db = new BgbContext();
 
         // GET: Games
-        public ActionResult Index(string sortOrder)
+        public ActionResult Index(string sortOrder, string searchString)
         {
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "title_desc" : "";
             var games = from g in db.Games
                         select g;
+            if(!String.IsNullOrEmpty(searchString))
+            {
+                games = games.Where(g => g.Title.Contains(searchString));
+            }
+
             switch (sortOrder)
             {
                 case "title_desc":

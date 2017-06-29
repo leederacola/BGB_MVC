@@ -1,43 +1,12 @@
-﻿6/29 
-Done:
-	added additional game properties
-	updated view/games/details shows new properties
-	linkable titles in repo
-	sorting title
-ToDo:
-	Views\Games
-		
-		drop down option for secondary property
-		add paging
-	Views\Users
-		paging: more than 3 users
-		details link - change to Library
-		linkable titles in user details/library
-
-
-6/26 TO DO LIST
-
-Models\Game
-	-Add more member properties to games....player ct, play time, release date
-Views\Games\Index
-	-Action Link from game title to link to game details page (details link as is, does this too)
-Views\Games\Details
-	-Details link will show (added)  details about desired title.
-
-Game Title Sorting
-Game Tile String Filtering
-(see tutorial)
-
-Add Drop down menu to Games\Index for Game Property Options
-	-Sort by new drop down option
-
-Paging for Game Repo
-
-
-
-
-
-
+﻿Search Box
+</p>
+@using (Html.BeginForm())
+{
+    <p>
+        Search Titles: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
 
 
 

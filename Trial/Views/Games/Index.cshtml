@@ -7,10 +7,18 @@
 }
 
 <h2>Games Repository</h2>
+<h5>(Current List of Games in DB that users can add to their Library)</h5>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+@using (Html.BeginForm())
+{
+    <p>
+        Search Titles: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
 <table class="table">
     <tr>
         <th>
