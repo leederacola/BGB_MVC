@@ -1,9 +1,17 @@
 ﻿6/29 
 Done:
-	added game details
-	view/games/details shows new properties
+	added additional game properties
+	updated view/games/details shows new properties
 ToDo:
-	more than 3 users paging
+	Views\Games
+		sorting title
+		linkable titles in repo
+		drop down option for secondary property
+		add paging
+	Views\Users
+		paging: more than 3 users
+		details link - change to Library
+		linkable titles in user details/library
 
 
 6/26 TO DO LIST

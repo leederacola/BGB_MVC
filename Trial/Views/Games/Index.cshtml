@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Trial.Models.Game>
 
 @{
-    ViewBag.Title = "Index";
+    //ViewBag.Title = "Index";
 }
 
 <h2>Games Repository</h2>
@@ -20,17 +20,18 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Title)
+          @Html.ActionLink(item.Title, "Details", new { id = item.GameID })     
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Rating)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.GameID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.GameID }) |
+
             @Html.ActionLink("Delete", "Delete", new { id=item.GameID })
         </td>
     </tr>
