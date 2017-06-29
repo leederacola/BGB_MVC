@@ -3,9 +3,10 @@ Done:
 	added additional game properties
 	updated view/games/details shows new properties
 	linkable titles in repo
+	sorting title
 ToDo:
 	Views\Games
-		sorting title
+		
 		drop down option for secondary property
 		add paging
 	Views\Users
