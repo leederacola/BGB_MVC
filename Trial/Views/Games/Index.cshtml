@@ -1,7 +1,9 @@
 ﻿@model IEnumerable<Trial.Models.Game>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 @{
-    //ViewBag.Title = "Index";
+    ViewBag.Title = "Index";
 }
 
 <h2>Games Repository</h2>
@@ -12,7 +14,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Title)
+            @Html.ActionLink("Title", "Index", new { sortOrder = ViewBag.NameSortParm })
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Rating)

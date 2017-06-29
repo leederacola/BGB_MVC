@@ -16,9 +16,21 @@ namespace Trial.Controllers
         private BgbContext db = new BgbContext();
 
         // GET: Games
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder)
         {
-            return View(db.Games.ToList());
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "title_desc" : "";
+            var games = from g in db.Games
+                        select g;
+            switch (sortOrder)
+            {
+                case "title_desc":
+                    games = games.OrderByDescending(g => g.Title);
+                    break;
+                default:
+                    games = games.OrderBy(g => g.Title);
+                    break;
+            }
+            return View(games.ToList());
         }
 
         // GET: Games/Details/5
