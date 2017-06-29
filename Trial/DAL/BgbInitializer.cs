@@ -24,7 +24,7 @@ namespace Trial.DAL
 
             var games = new List<Game>
             {
-                new Game { Title = "Blood Rage", Rating = 7},
+                new Game { Title = "Blood Rage", Rating = 7, ReleaseDate = 2016, MaxPlayer = 5, MinPLayer = 2, AvgPlayTime = 2 },
                 new Game { Title = "Lost Cities", Rating = 9},
                 new Game { Title = "Arkham Horror LCG", Rating = 7},
                 new Game { Title = "Patchwork", Rating = 8},

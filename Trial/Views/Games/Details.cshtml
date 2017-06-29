@@ -26,6 +26,30 @@
             @Html.DisplayFor(model => model.Rating)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.ReleaseDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReleaseDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AvgPlayTime) (hrs.)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AvgPlayTime)
+        </dd>
+
+        <dt>
+            Player Count
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinPLayer) - @Html.DisplayFor(model => model.MaxPlayer)
+        </dd>
+
     </dl>
 </div>
 <p>

@@ -1,4 +1,12 @@
-﻿6/26 TO DO LIST
+﻿6/29 
+Done:
+	added game details
+	view/games/details shows new properties
+ToDo:
+	more than 3 users paging
+
+
+6/26 TO DO LIST
 
 Models\Game
 	-Add more member properties to games....player ct, play time, release date
