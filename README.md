@@ -8,7 +8,7 @@ Basic Idea:
   Have users, have games, have users add games to their Library.  Sort and query those games.  
 
 Data Model  
-  -Game: boar game titles & properties  
+  -Game: board game titles & properties  
   -User: User Name & ICollection<Collections>  
   -Collection: User ID and Game ID  
 
