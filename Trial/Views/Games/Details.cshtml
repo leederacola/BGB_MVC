@@ -1,5 +1,5 @@
 ﻿@model Trial.Models.Game
-@using Trial.Models;
+
 @{
     ViewBag.Title = "Details";
 }
@@ -35,7 +35,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.AvgPlayTime) (hrs.)
+            Average Play Time(hrs.)
         </dt>
 
         <dd>
@@ -52,6 +52,9 @@
 
     </dl>
 </div>
+<h3>
+    @Html.ActionLink("Add This Game To A User Library", "Create", "Collections")
+</h3>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.GameID }) |
     @Html.ActionLink("Back to List", "Index")
