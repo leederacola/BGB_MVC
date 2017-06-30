@@ -5,7 +5,7 @@ I have worked through  Pro MVC 5 Sports Store and Microsofts.
 
 Board Game Collection App  
 Basic Idea:  
-  Have users, have games, have users add games to their Library.  Sort and query those games.  
+Users Login, add Titles to game Library and manage collection.  
 
 Data Model  
   -Game: board game titles & properties  
