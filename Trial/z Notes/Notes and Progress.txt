@@ -1,4 +1,15 @@
-﻿Search Box
+﻿6/30  Paging Revisited
+
+package PagedList.MVC
+using PagesList;
+Controller
+	int? page as paramater
+	more..
+	int pageSize = 3;
+	int pageNumber = (page ?? 1);
+	return View(students.ToPagedList(pageNumber, pageSize));
+
+Search Box
 </p>
 @using (Html.BeginForm())
 {
