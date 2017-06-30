@@ -1,5 +1,35 @@
-﻿6/30  Paging Revisited
+﻿
+***********6/30  Paging Revisited***************
 
+CollectionController
+
+
+Add game to User Library (outside initiailizer)
+from: game repo and user details
+
+GamesController 
+Create()
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "GameID,Title,Rating")] Game game)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Games.Add(game);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(game);
+        }
+
+		[HttpPost] read about this more.
+
+
+
+
+
+***************************************************************************************************************************************
 package PagedList.MVC
 using PagesList;
 Controller
@@ -8,7 +38,7 @@ Controller
 	int pageSize = 3;
 	int pageNumber = (page ?? 1);
 	return View(students.ToPagedList(pageNumber, pageSize));
-
+***************************************************************************************************************************************
 Search Box
 </p>
 @using (Html.BeginForm())

@@ -1,4 +1,5 @@
 ﻿@model PagedList.IPagedList<Trial.Models.Game>
+@using Trial.Models;
 @using PagedList.Mvc;
 <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
@@ -40,8 +41,10 @@
             @Html.DisplayFor(modelItem => item.Rating)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.GameID }) |
 
+
+            
+            @Html.ActionLink("Edit", "Edit", new { id=item.GameID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.GameID })
         </td>
     </tr>
