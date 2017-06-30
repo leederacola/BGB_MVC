@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
+using PagedList;
 using System.Web.Mvc;
 using Trial.DAL;
 using Trial.Models;
@@ -16,11 +15,23 @@ namespace Trial.Controllers
         private BgbContext db = new BgbContext();
 
         // GET: Games
-        public ActionResult Index(string sortOrder, string searchString)
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "title_desc" : "";
+
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+            ViewBag.CurrentFilter = searchString;
+
             var games = from g in db.Games
                         select g;
+
             if(!String.IsNullOrEmpty(searchString))
             {
                 games = games.Where(g => g.Title.Contains(searchString));
@@ -35,7 +46,9 @@ namespace Trial.Controllers
                     games = games.OrderBy(g => g.Title);
                     break;
             }
-            return View(games.ToList());
+            int pageSize = 10;
+            int pageNumber = (page ?? 1);
+            return View(games.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: Games/Details/5
