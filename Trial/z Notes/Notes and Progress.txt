@@ -1,4 +1,6 @@
-﻿
+﻿See Trello For Todays Plans
+
+
 ***********6/30  Paging Revisited***************
 
 CollectionController
