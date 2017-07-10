@@ -1,27 +1,23 @@
 # BGB_MVC
 My First REAL go at a .Net MVC web application using EntityFrameWork.  
-I have worked through  Pro MVC 5 Sports Store and Microsofts.   
+Notes for you and myself.
 
+Board Game Collection App
 
-Board Game Collection App  
 Basic Idea:  
-Users Login, add Titles to game Library and manage collection.  
+Users create login  
+search game db for titles to add to personal library
+    games db now created with initiliazer
+    need to use boardgamegeek.com api https://boardgamegeek.com/wiki/page/BGG_XML_API2   (????? HOW ??????)
+users query game library to find game to play
+saved to database
 
-Data Model  
+Current Data Model  
   -Game: board game titles & properties  
   -User: User Name & ICollection<Collections>  
   -Collection: User ID and Game ID  
 
-
-***To Do***  
-visual pollish  
-null-able game properties  
-Collection CRUD edits  
-***Basic Features Fully Functionalable***  
-
-***STOP No More***
-***Switch from Local Db, Publish Online v1.0***  
-***Learn more Git branches? Switch back to LocalDB, continue working***  
-
-
+More Things to add:
+Connected users, view, search friends game library, collective library queries
+Track Plays - record game win/los, points, notes because people do this sometimes.
 
